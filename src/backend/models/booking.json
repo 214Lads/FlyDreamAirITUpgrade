@@ -1,0 +1,11 @@
+[
+    {
+        "id":1,
+        "isStaff":false,
+        "flight_Id":123,
+        "seat_Id":"E-A1",
+        "customer_fname":"Rowan",
+        "customer_lname":"Kelley",
+        "customer_email":"test@exmaple.com"
+    }
+]

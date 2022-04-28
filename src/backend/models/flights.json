@@ -1,0 +1,18 @@
+[
+    {
+        "uid":1928,
+        "aircraft":"A380",
+        "seats":[
+            {
+                "seatNum":"E-A1",
+                "type":"Economy",
+                "filled":false
+            },
+            {
+                "seatNum":"E-A2",
+                "type":"Economy",
+                "filled":false
+            }
+        ]
+    }
+]
