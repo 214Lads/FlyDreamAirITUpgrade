@@ -1,0 +1,14 @@
+#logo{
+    width: 200px;
+}
+#container{
+    display: flex;
+    flex-direction: row;
+}
+#child{
+    width: 50%;
+    background-color: #BD1e1e;
+    text-align: center;
+    color:white;
+    padding:20px
+}

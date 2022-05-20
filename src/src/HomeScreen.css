@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    background-color: #BD1E1E;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#logoContainer{
+    align-self: center;
+    background-color: white;
+    width:100%;
+
+}
+#banner{
+    color: white;
+
+}
+#flyType{
+    text-align: center;
+}
+#radioButton{
+    margin: 20px;
+}
+#dropDown{
+    width: 20px;
+}
+#submit{
+    border-radius: 10px;
+    height: 30px;
+}
+#main{
+    background-color: white;
+}
+#dropdown {
+    height: 40px;
+    border-radius: 10px;
+    width: 150px;
+}

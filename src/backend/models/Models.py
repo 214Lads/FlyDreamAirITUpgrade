@@ -9,12 +9,15 @@ class Seat(BaseModel):
 class Flight(BaseModel):
     id:int
     aircraft:str
-    # seats:list=[Seat]
+    destinationPort:str
+    departurePort:str
+    seats:list=[]
 
 class Booking(BaseModel):
     id:int
     isStaff:bool
     flight:Flight
+    cost:float
     seat:Seat
     fname:str
     lname:str

@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Checkout from './Checkout'
+import Details from './Details';
+import SeatSelection from './SeatSelection';
+import HomeScreen from './HomeScreen';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HomeScreen />
   </React.StrictMode>,
   document.getElementById('root')
 );
