@@ -1,0 +1,22 @@
+body{
+    background-color: white;
+
+}
+input{
+    border-radius: 10px;
+    padding:10px;
+    border: none;
+    margin: 5px;
+}
+#main{
+    background-color: #BD1e1e;
+    height: 500px;
+    width: 100%;
+    padding-top: 20px;
+    color: white;
+}
+#bookingInfo{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

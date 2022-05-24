@@ -1,28 +1,38 @@
 from http.client import HTTPException
 from multiprocessing.dummy import Array
 from typing import List
+from wsgiref import headers
 from fastapi import FastAPI, Header, HTTPException, Request, Response
+from fastapi.responses import JSONResponse
 import os
 import uvicorn
 import json
 from models.Models import Seat, Flight, Booking
-from methods import flightUnique
+from methods import addBooking, flightUnique, getFlights
 
 app = FastAPI(docs_url="/docs")
 BASE_PATH = 'json/'
 # AUTH_TOKEN = os.getenv('AUTH_TOKEN')
 
-@app.middleware("http") #For authentication
-async def check_auth_header(request: Request, call_next):
-    print("here")
-    return await call_next(request)
-    
-@app.get("/flights", tags=['Flights'])
-async def get_all_flights() -> Flight:
+returnHeaders={
+    'Access-Control-Allow-Origin':'*', #Allow cors
+}
 
-    flights:Array = json.loads(open(f'{BASE_PATH}/flights.json').read())
+# @app.middleware("http") #For authentication
+# async def check_auth_header(request: Request, call_next):
+#     return await call_next(request)
 
-    return flights
+@app.get("/airports", tags=['Airports'])
+async def get_airports()->Array:
+
+    return JSONResponse(json.loads(open(f'{BASE_PATH}/airports.json').read()), headers=returnHeaders)
+
+@app.get("/flights/", tags=['Flights'])
+async def get_flights(depart:str, dest:str, departDate:str) -> Flight:
+
+    flights:Array=getFlights(depart, dest, departDate)
+
+    return JSONResponse(content=flights, headers=returnHeaders)
 
 @app.get("/flights/{id}", tags=['Flights']) # Get flight information of specific flight
 async def get_flight(id:int) -> Flight:
@@ -75,12 +85,10 @@ async def get_booking(id:int) -> Booking:
 @app.post("/bookings", tags=['Booking'])
 async def add_booking(booking:Booking) -> Booking:
     
-    bookingList:Array = json.loads(open(f'{BASE_PATH}/bookings.json').read())
-    bookingList.append(booking.dict())
+    addBooking(booking)
+    return JSONResponse({'detail':'success'}, headers=returnHeaders)
 
-    with open(f'{BASE_PATH}/bookings.json','w') as f:
-        json.dump(bookingList, fp=f, indent=2)
-    return booking
+
     
 
 if __name__ == "__main__":
