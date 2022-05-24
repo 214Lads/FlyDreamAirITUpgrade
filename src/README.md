@@ -1,3 +1,0 @@
-#Sky Book
-
-#Get started

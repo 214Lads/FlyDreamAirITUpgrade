@@ -1,0 +1,40 @@
+#logo{
+    width: 200px;
+}
+#container{
+    display: flex;
+    flex-direction: row;
+    margin: 20;
+    padding: 30;
+    /* position: absolute; */
+    margin: auto;
+    margin-top: 100px;
+    width: 70%;
+    height: 80%;
+}
+
+#child{
+    width: 50%;
+    background-color: #BD1e1e;
+    text-align: center;
+    color:white;
+    padding:20px
+}
+#close{
+    background-color: #BD1e1e;
+    position: absolute;
+    right:0;
+    top:0;
+    margin: 20px;
+}
+#confirm{
+    margin: 20px;
+}
+#total{
+    border-radius: 10px;
+    background-color:white; 
+    font-size: 25px; 
+    color:black
+
+}
+
