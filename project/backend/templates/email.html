@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		<meta http-equiv=”Content-Type” /> 
+		<meta name=”viewport” />
+	</head>
+
+    <style>
+        body{
+            text-align: center;
+        }
+        table{
+            text-align:center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+	</style>
+
+	<body>
+        <div id="logoContainer">
+            <!-- <img id="logo" src='../../src/assets/logo.png')}/> -->
+            <img alt="logo" id="logo" src="http://localhost:3000/static/media/logo.896d202b7ab0b3a329ac.png"/>
+        </div>
+
+        <h1>Booking Confirmation</h1>
+        
+        <h3>Your Details</h3>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <td>{{ booking.fname }}</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>{{ booking.lname }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ booking.country }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ booking.city }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ booking.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td>{{ booking.phoneNum }}</td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td>{{ booking.dob }}</td>
+            </tr>
+        </table>
+
+        <h3>Booking Details</h3>
+        <table>
+            <tr>
+                <th>Departure Date</th>
+                <td>{{ booking.flight.departureDate }}</td>
+            </tr>
+            <tr>
+                <th>Departure Port</th>
+                <td>{{ booking.flight.departure }}</td>
+            </tr>
+            <tr>
+                <th>Arrival Date</th>
+                <td>{{ booking.flight.arrivalDate }}</td>
+            </tr>
+            <tr>
+                <th>Destination Port</th>
+                <td>{{ booking.flight.destination }}</td>
+            </tr>
+            <tr>
+                <th>Aircraft</th>
+                <td>{{ booking.flight.aircraft }}</td>
+            </tr>
+            <tr>
+                <th>Class</th>
+                <td>{{ seat.type }}</td>
+            </tr>
+            <tr>
+                <th>Seat</th>
+                <td>{{ seat.num }}</td>
+            </tr>
+            <tr>
+                <th>Packages</th>
+                <td>{{ booking.package }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>${{ booking.flight.price }}</td>
+            </tr>
+        </table>
+	</body>
+
+</html>

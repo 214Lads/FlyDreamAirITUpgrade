@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './Details.css';
 import {useLocation} from 'react-router-dom';
 import DatePicker from "react-datepicker";
+import { useNavigate } from 'react-router-dom';
+import LoadingIcons from 'react-loading-icons'
 
 
 function Details(params) {
@@ -9,6 +11,8 @@ function Details(params) {
     const BASE_URL = 'http://flydreamair.com:8000'
 
     const location = useLocation();
+    const navigate = useNavigate();
+
     console.log(location)
 
     const [fName, setFname] = useState("")
@@ -20,18 +24,17 @@ function Details(params) {
     const [dob, setDob] = useState(new Date())
     const [acceptTerms, setAcceptTerms] = useState(false)
 
+    const [submitLoading, setSubmitLoading] = useState(false)
+
     const handleSubmit = async()=>{
         
+        setSubmitLoading(true)
         const requestObj = {
             'id':0,
             'flight':location.state.flight,
             'price':location.state.total,
-            'seat':{
-                'num':location.state.seat.label,
-                'type':location.state.class.label,
-                'available':true
-            },
-            'package':location.state.package,
+            'seat':location.state.seat.value,
+            'package':location.state.package.label,
             'fname':fName,
             'lname':lName,
             'email':email,
@@ -43,12 +46,17 @@ function Details(params) {
 
         const resp = await fetch(`${BASE_URL}/bookings`,{
             method:'POST',
-            body:requestObj,
-            // headers:{
-            //     mode: 'no-cors'
-            // }
+            body:JSON.stringify(requestObj),
+            headers:{
+                'Content-Type':'application/json',
+            }
         })
-        console.log(resp)
+
+        if (resp.status == 200){
+            navigate('/thankyou')
+        }
+
+        setSubmitLoading(false)
     }
 
     return (
@@ -124,7 +132,12 @@ function Details(params) {
                     <td>${location.state.total}</td>
                 </tr>
             </table>
-            <button onClick={() => handleSubmit()}>Submit</button>
+            {!submitLoading ?
+                <button onClick={() => handleSubmit()}>Submit</button>
+                :
+                <LoadingIcons.ThreeDots stroke='#000000'/>
+
+            }
         </div>
     </>
 

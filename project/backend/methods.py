@@ -1,4 +1,6 @@
 import json
+from jinja2 import Environment, FileSystemLoader
+import datetime
 
 def flightUnique(flight, flightList):
     
@@ -22,9 +24,20 @@ def getFlights(depart, dest, departDate):
 
 def addBooking(booking):
 
+    
     bookingList = json.loads(open(f'json/bookings.json').read())
-    booking['id']=len(bookingList)+1
     bookingList.append(booking.dict())
 
     with open(f'json/bookings.json','w') as f:
         json.dump(bookingList, fp=f, indent=2)
+
+def makeEmail(booking, seat):
+
+    date = datetime.datetime.now()
+    date = date.strftime("%-d %B %Y")
+
+    file_loader = FileSystemLoader("templates")
+    env = Environment(loader=file_loader)
+    template = env.get_template('email.html')
+
+    return template.render(booking=booking, seat=seat)

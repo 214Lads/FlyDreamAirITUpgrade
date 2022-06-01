@@ -35,11 +35,16 @@ function SeatSelection({flight, setOverlay}) {
     const [classSelected, setClassSelected] = useState(classOptions[0]) 
     const [total, setTotal] = useState(flight.price)
     const [packageSelected, setPackageSelected] = useState(extras[0])
-    const [seatSelection, selectSeat] = useState(flight.seats[0])
+    const [seatSelection, selectSeat] = useState({'label':flight.seats[0].num, 'value':flight.seats[0]})
 
     const getSeatOptions = () =>{
         let list = flight.seats.filter((item)=>item.type == classSelected.label && item.available==true)
-        list = list.map((item) => item.num)
+        list = list.map((item) => {
+            return{
+                label:item.num,
+                value:item
+            }
+        })
         return list
     }
     const handleClassSelection = (e) =>{
