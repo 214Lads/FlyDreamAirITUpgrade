@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FlyDreamAir Hi-fi Design</title>
+		<style>
+			.centerimg{
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 50%;
+			}
+			
+			.blur{
+				filter: blur(8px);
+			}
+			
+			.parent{
+				position: relative;
+				top: 0;
+				left: 0;
+			}
+			
+			.pos1{
+				position: relative;
+				top: 0;
+				left: 0;
+			}
+			
+			.pos2{
+				position: absolute;
+				top: 30px;
+				left: 500px;
+			}
+			
+			.button{
+				border: none;
+				  color: black;
+				  padding: 15px 32px;
+				  text-align: center;
+				  text-decoration: none;
+				  display: inline-block;
+				  font-size: 16px;
+				  margin: 4px 2px;
+				  cursor: pointer
+			}
+			
+			.buttonpos{
+				position: absolute;
+				top: 595px;
+				left: 785px;
+				background: transparent;
+				border: none !important;
+				font-size: 0;
+			}
+			
+			.buttonpos2{
+				position: absolute;
+				top: 30px;
+				left: 950px;
+				background: transparent;
+				border: none !important;
+				font-size: 0;
+			}
+			
+			.newDetails{
+				display: none;
+			}
+		</style>
+		
+		<script>
+		
+			
+			function change()
+			{
+				document.getElementById("newdetails".onclick = window.location.replace("enterdetails.html");
+			}
+		</script>
+	</head>
+	<body>
+		<div class = "parent">
+			<img src = "SearchListings.png" alt = "home" id= "home" class = "centerimg blur pos1" style = "width:1200px;height:1700px;"> 
+			<a>
+				<img src = "SeatSelection.png" alt = "startup" class = "centerimg pos2" id = "startup" style = "width:500px;height:700px;">
+			</a>
+			<a href ="Search-Listings.html">
+				<button type = "button" id = "Returning" class = "button buttonpos2" style = "width:10px;height:40px">test</button>
+			</a>		
+			
+			<a href ="Payment.html" class = "button">
+				<button type = "button" id = "newdetails" class = "button buttonpos" style = "width:150px;height:30px">test</button>
+			</a>
+			
+			<img src = "EnterDetails.png" id = "newDetails" alt = "startup" class = "centerimg pos2 newDetails" style = "width:500px;height:700px;">
+		</div>
+
+	</body>
+</html>

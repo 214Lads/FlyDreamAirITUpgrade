@@ -4,6 +4,7 @@ import HomeScreen from './HomeScreen'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Details from "./Details";
 import './index.css'
+import ThankYou from "./ThankYou";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root")
@@ -14,6 +15,7 @@ root.render(
     <Routes>
       <Route path="/" element={<HomeScreen/>}/>
       <Route path="details" element={<Details/>}/>
+      <Route path="thankyou" element={<ThankYou/>}/>
       <Route
       path="*"
       element={

@@ -1,0 +1,17 @@
+body{
+    background-color: white;
+
+}
+#main{
+    background-color: #BD1e1e;
+    height: 500px;
+    width: 100%;
+    padding-top: 20px;
+    color: white;
+}
+#logo{
+    margin: 20px;
+}
+#tick{
+    border-radius:  50%;
+}

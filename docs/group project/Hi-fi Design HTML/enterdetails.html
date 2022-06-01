@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FlyDreamAir Hi-fi Design</title>
+		<style>
+			.centerimg{
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 50%;
+			}
+			
+			.blur{
+				filter: blur(8px);
+			}
+			
+			.parent{
+				position: relative;
+				top: 0;
+				left: 0;
+			}
+			
+			.pos1{
+				position: relative;
+				top: 0;
+				left: 0;
+			}
+			
+			.pos2{
+				position: absolute;
+				top: 30px;
+				left: 500px;
+			}
+			
+			.button{
+				border: none;
+				  color: black;
+				  padding: 15px 32px;
+				  text-align: center;
+				  text-decoration: none;
+				  display: inline-block;
+				  font-size: 16px;
+				  margin: 4px 2px;
+				  cursor: pointer
+			}
+			
+			.buttonpos{
+				position: absolute;
+				top: 565px;
+				left: 670px;
+				background: transparent;
+				border: none !important;
+				font-size: 0;
+			}
+			
+			.buttonpos2{
+				position: absolute;
+				top: 30px;
+				left: 950px;
+				background: transparent;
+				border: none !important;
+				font-size: 0;
+				visibility: visible;
+			}
+		</style>
+		
+		
+	</head>
+	<body>
+		<div class = "parent">
+			<img src = "Home-Search.png" alt = "home" class = "centerimg blur pos1" style = "width:1200px;height:1700px;"> 
+		
+			<img src = "EnterDetails.png" alt = "startup" class = "centerimg pos2" style = "width:500px;height:700px;">
+			
+			<a href ="Startup.html">
+				<button type = "button" id = "exit" class = "button buttonpos2" hidden = "hidden" style = "width:10px;height:20px">test</button>
+			</a>		
+			
+			<a href ="Search-Home.html">
+				<button type = "button" id = "newdetails" class = "button buttonpos" hidden = "hidden" style = "width:150px;height:50px"></button>
+			</a>
+			
+			
+		</div>
+
+	</body>
+</html>

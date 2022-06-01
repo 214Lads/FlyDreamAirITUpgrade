@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.613a8e46.css",
+    "main.js": "/static/js/main.3f796526.js",
+    "static/media/seatSelection.png": "/static/media/seatSelection.cf1174f88e8659a456d5.png",
+    "static/media/logo.png": "/static/media/logo.896d202b7ab0b3a329ac.png",
+    "static/media/greenTick.jpeg": "/static/media/greenTick.c973b25bb0eacb1839e8.jpeg",
+    "index.html": "/index.html",
+    "main.613a8e46.css.map": "/static/css/main.613a8e46.css.map",
+    "main.3f796526.js.map": "/static/js/main.3f796526.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.613a8e46.css",
+    "static/js/main.3f796526.js"
+  ]
+}
