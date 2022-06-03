@@ -56,7 +56,7 @@
 - Instantiate python server by running `python RestAPI.py`
 
 ## Conclusion
-- If sucessfull navigate to [flydreamair.com](flydreamair.com) and you will be presented with a page that looks like this:
+- If sucessfull navigate to [flydreamair.com](http://flydreamair.com) and you will be presented with a page that looks like this:
 ![Screen Shot 2022-06-03 at 11 54 44 am (2)](https://user-images.githubusercontent.com/74891114/171771709-3449797f-125e-45c0-8043-80a1d61fb8bc.png)
 - Now you can start booking flights
 
